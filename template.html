@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <h1>{{ title }}</h1>
+        <div class="dates">{{ start_date }} - {{ end_date }}</div>
+        <div class="bible_verse">'{{ bible_verse.text }}' {{ bible_verse.reference }}</div>
+        {% for prayer_day in prayer_days %}
+            <div class="prayer_day">
+                <hr/>
+                <h2 class="date">{{ prayer_day.date }}</h2>
+                <hr/>
+                <ul>
+                    {% for prayer_point in prayer_day.prayer_points %}
+                    <li>{{ prayer_point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </body>
+</html>
