@@ -11,7 +11,12 @@
                 <hr/>
                 <ul>
                     {% for prayer_point in prayer_day.prayer_points %}
-                    <li>{{ prayer_point }}</li>
+                    <li>
+                        <t class="prayer_subject">{{ prayer_point.subject }}</t> - {{ prayer_point.detail }}
+                        {% for prayer_subpoint in prayer_point.subpoints %}
+                            <li>{{ prayer_subpoint }}</li>
+                        {% endfor %}
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
